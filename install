@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+command -v python > /dev/null 2>&1 || { echo >&2 "python not found !, Installing... python"; apt install python -y 1; }
+command -v figlet > /dev/null 2>&1 || { echo >&2 "figlet not found !, Installing... figlet"; apt install figlet -y 1; }
+
+echo installing depends
+pip install requests
+echo installig main-tool
+curl -O https://raw.githubusercontent.com/Anon4You/TVAtool/main/viewsadder
+mv viewsadder $PATH
+chmod +x $PATH/viewsadder
+clear
+figlet Installed
+echo you can now run this tool by typing viewsadder
+
